@@ -1,11 +1,11 @@
 <template>
 <v-app>
-  <v-navigation-drawer app color="primary">
+  <v-navigation-drawer app v-model="drawer" temporary>
     <!-- -->
   </v-navigation-drawer>
 
-  <v-app-bar app>
-    <!-- -->
+  <v-app-bar app color="primary">
+    <v-app-bar-nav-icon @click.stop="drawer = !drawer" dark></v-app-bar-nav-icon>
   </v-app-bar>
 
   <!-- Sizes your content based upon application components -->
@@ -35,7 +35,7 @@ export default {
   },
 
   data: () => ({
-    //
+drawer: null
   }),
 };
 </script>
