@@ -1,41 +1,122 @@
 <template>
-<v-app>
-  <v-navigation-drawer app v-model="drawer" temporary>
-    <!-- -->
-  </v-navigation-drawer>
+  <v-app>
+    <v-navigation-drawer app v-model="drawer" temporary flat>
+      <!-- -->
+    </v-navigation-drawer>
 
-  <v-app-bar app color="primary">
-    <v-app-bar-nav-icon @click.stop="drawer = !drawer" dark></v-app-bar-nav-icon>
-  </v-app-bar>
+    <v-app-bar app absolute flat>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-title shrink-on-scroll>
+        <Title />
+      </v-app-bar-title>
+    </v-app-bar>
 
-  <!-- Sizes your content based upon application components -->
-  <v-main>
+    <v-main>
+      <v-container fluid>
+        <router-view></router-view>
+      </v-container>
+    </v-main>
 
-    <!-- Provides the application the proper gutter -->
-    <v-container fluid>
-
-      <!-- If using vue-router -->
-      <router-view></router-view>
-    </v-container>
-  </v-main>
-
-  <v-footer app>
-    <!-- -->
-  </v-footer>
-</v-app>
+    <v-footer app padless>
+      <Footer />
+    </v-footer>
+  </v-app>
 </template>
 
 <script>
+import Footer from "@/components/Footer.vue";
+import Title from "@/components/Title.vue";
 
 export default {
-  name: 'App',
+  name: "App",
 
   components: {
-
+    Footer,
+    Title,
   },
 
   data: () => ({
-drawer: null
+    drawer: null,
   }),
 };
 </script>
+
+<style>
+@import url("https://fonts.googleapis.com/css?family=Fira+Mono:400");
+
+title {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background: #131313;
+  color: #fff;
+  font-size: 96px;
+  font-family: "Fira Mono", monospace;
+  letter-spacing: -7px;
+  animation: glitch 1s linear infinite;
+}
+
+@keyframes glitch {
+  2%,
+  64% {
+    transform: translate(2px, 0) skew(0deg);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 0) skew(0deg);
+  }
+  62% {
+    transform: translate(0, 0) skew(5deg);
+  }
+}
+
+div:before,
+div:after {
+  content: attr(title);
+  position: absolute;
+  left: 0;
+}
+
+div:before {
+  animation: glitchTop 1s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+@keyframes glitchTop {
+  2%,
+  64% {
+    transform: translate(2px, -2px);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 2px);
+  }
+  62% {
+    transform: translate(13px, -1px) skew(-13deg);
+  }
+}
+
+div:after {
+  animation: glitchBotom 1.5s linear infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchBotom {
+  2%,
+  64% {
+    transform: translate(-2px, 0);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 0);
+  }
+  62% {
+    transform: translate(-22px, 5px) skew(21deg);
+  }
+}
+</style>
