@@ -4,11 +4,14 @@
       <!-- -->
     </v-navigation-drawer>
 
-    <v-app-bar app absolute flat>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+    <v-app-bar app absolute flat color="primary">
+      <!--     <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>  -->
       <v-app-bar-title shrink-on-scroll>
         <Title />
       </v-app-bar-title>
+      <v-spacer></v-spacer>
+      <v-btn text>Home</v-btn>
+      <v-btn text>CV</v-btn>
     </v-app-bar>
 
     <v-main>
