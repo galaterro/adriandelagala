@@ -20,7 +20,7 @@
       </v-container>
     </v-main>
 
-    <v-footer app padless>
+    <v-footer app padless absolute>
       <Footer />
     </v-footer>
   </v-app>
