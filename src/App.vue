@@ -27,8 +27,8 @@
 </template>
 
 <script>
-import Footer from "@/components/Footer.vue";
-import Title from "@/components/Title.vue";
+import Footer from "@/components/layout/Footer.vue";
+import Title from "@/components/layout/Title.vue";
 
 export default {
   name: "App",

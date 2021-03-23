@@ -7,8 +7,9 @@
       <v-theme-provider dark>
         <v-container fill-height>
           <v-row align="center" class="white--text mx-auto" justify="center">
-            <v-col class="white--text text-center" cols="12" tag="h1"> </v-col>
-
+            <v-col class="white--text text-center" cols="12" tag="h1">
+              Welcome</v-col
+            >
             <v-btn class="align-self-end" fab outlined>
               <v-icon>mdi-chevron-double-down</v-icon>
             </v-btn>
