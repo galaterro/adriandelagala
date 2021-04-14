@@ -1,5 +1,5 @@
 <template>
-  <div title="Adrian de la Gala">Adrian de la Gala</div>
+  <div title="Adrián de la Gala">Adrián de la Gala</div>
 </template>
 
 <script>
