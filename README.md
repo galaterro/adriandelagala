@@ -1,24 +1,8 @@
 # adriandelagala
 
-## Project setup
-```
-yarn install
-```
+## Descripción del proyecto:
 
-### Compiles and hot-reloads for development
 ```
-yarn serve
+Este es un proyecto personal de auto aprendizaje, que además me servirá como página para subir mis proyectos
+y mi CV.
 ```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
